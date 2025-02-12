@@ -1,0 +1,11 @@
+Divisor substrings :
+        subs = str(num)[:k]
+        r = 0
+        if (int(subs) != 0) and (num%int(subs) == 0) :
+            r += 1
+        for i in str(num)[k:] :
+            subs += i
+            subs = subs[1:]
+            if (int(subs) != 0) and (num%int(subs) == 0) :
+                r += 1
+        return r
