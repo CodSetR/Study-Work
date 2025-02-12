@@ -1,0 +1,13 @@
+minimum recolors :
+        subs,b = blocks[:k],0
+        for i in subs :
+            if i == "B" : b +=1
+            if b == k : print (0)
+            l,w = k-b,k-b
+        for i in blocks[k:] :
+            if subs[0] == "B" : l += 1
+            subs += i
+            subs = subs[1:]
+            if i == "B" : l -= 1
+            w = min(w,l)
+        return(w)
