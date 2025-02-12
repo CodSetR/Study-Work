@@ -1,0 +1,16 @@
+Defuse the bomb :
+        s = []
+        if k == 0 :
+            for i in code: code[code.index(i)] = 0
+            return(code)
+        elif k > 0 :
+            code.extend(code[:k])
+            for i in range(len(code)) :
+                s.append(sum(code[i+1:i+k+1]))
+            return(s[:len(s)-k])
+        else :
+            code.extend(code[:-k])
+            for i in range(len(code)) :
+                s.append(sum(code[i:i-k]))
+            s = s[:len(code)+k]
+            return(s[len(s)+k:]+s[:len(s)+k])
