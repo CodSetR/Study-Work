@@ -1,0 +1,9 @@
+        f,n,r = 0,[],""
+        for i in s :
+            if i == "(" : f += 1
+            if i != "(": f -= 1
+            n.append(i)
+            if  f == 0 :
+                r += "".join(n[1:-1])
+                n = []
+        return(r)
