@@ -1,0 +1,10 @@
+        st,nd,rd = "qwertyuiop","asdfghjkl","zxcvbnm"
+        o = []
+        for i in words :
+            a,b,c = 0,0,0
+            for k in i.lower() :
+                if k in st : a += 1
+                elif k in nd : b += 1
+                elif k in rd : c += 1
+            if (a or b or c) == len(i) : o.append(i) 
+        return o
