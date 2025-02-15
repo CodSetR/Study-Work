@@ -1,0 +1,10 @@
+        f = 0
+        for i in logs :
+            if i == "../" :
+                if f == 0 :
+                    continue
+                else :
+                    f -= 1
+            elif "." not in i :
+                f += 1
+        return f
