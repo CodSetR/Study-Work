@@ -1,0 +1,13 @@
+        r = []
+        u = ""
+        for i in s:
+            if i.isalpha() :
+                r.append(i)
+        n = len(r)-1
+        for k in s:
+            if k in r :
+                u += r[n]
+                n -= 1
+            else :
+                u += k
+        return u
