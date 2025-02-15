@@ -1,0 +1,7 @@
+        if needle not in haystack :
+            return (-1)
+        else:
+            k = haystack.replace(needle,"-")
+            for i in k:
+                if i == "-" :
+                    return (k.index(i))
