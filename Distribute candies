@@ -1,0 +1,2 @@
+        if len(candyType)/2 >= len(set(candyType)) : return len(set(candyType))
+        else : return int(len(candyType)/2)
