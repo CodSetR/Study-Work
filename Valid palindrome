@@ -1,0 +1,6 @@
+        char = "aqzwsxedcrfvtgbyhnujmikolp1234567890"
+        o = ""
+        for i in s.lower() :
+            if i in char :
+                o += i
+        return(o == o[::-1])
