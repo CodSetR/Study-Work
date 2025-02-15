@@ -1,0 +1,16 @@
+        ope = []
+        for i in target :
+            if i != target[-1] :
+                if target[target.index(i)+1]-i == 1 :
+                    ope.append("Push")
+                else :
+                    ope.append("Push")
+                    for i in range(target[target.index(i)+1]-i-1) :
+                        ope.extend(["Push","Pop"])
+            else :
+                ope.append("Push")
+                if target[0] != 1 :
+                    for i in range(target[0]-1) :
+                        ope.insert(0,"Pop")
+                        ope.insert(0,"Push")
+                return ope
