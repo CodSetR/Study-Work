@@ -1,0 +1,7 @@
+        a,b = headA,headB
+        while a != b :
+            if a == b : 
+                return a
+            a = a.next if a else headB
+            b = b.next if b else headA
+        return a
