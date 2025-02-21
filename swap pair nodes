@@ -1,0 +1,8 @@
+	    if not head: return head
+	    p, c, a= None, head, head.next
+	    while c and c.next:
+		    ad = c.next
+		    if p: p.next = ad
+		    c.next, ad.next = ad.next, c
+		    p, c = c, c.next
+	    return a or head
