@@ -1,0 +1,5 @@
+        a,o = head,""
+        while a :
+            o += str(a.val)
+            a = a.next
+        return o == o[::-1]
