@@ -1,0 +1,8 @@
+        d = ListNode(-1)
+        d.next = head
+        a = d
+        if a == None : return head
+        while a.next != None :
+            if a.next.val == val : a.next = a.next.next
+            else : a = a.next
+        return d.next
