@@ -1,0 +1,8 @@
+        result = []
+        def recursion_pot(root) :
+            if root :
+                recursion_pot(root.left)
+                recursion_pot(root.right)
+                result.append(root.val)
+        recursion_pot(root)
+        return result
