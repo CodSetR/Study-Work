@@ -1,0 +1,9 @@
+        if not root : return None
+        def invert(root) :
+            if not root : return None
+            if root.right or root.left :
+                root.right,root.left = root.left,root.right
+            invert(root.right)
+            invert(root.left)
+        invert(root)
+        return root
