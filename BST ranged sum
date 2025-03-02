@@ -1,0 +1,9 @@
+        summation = []
+        def rangesum(root) :
+            if root :
+                rangesum(root.left)
+                rangesum(root.right)
+                if low <= root.val <= high : 
+                    summation.append(root.val)
+            return summation
+        return sum(rangesum(root))
