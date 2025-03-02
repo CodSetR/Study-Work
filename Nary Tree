@@ -1,0 +1,8 @@
+        if not root : return []
+        result = []
+        def s_child(root) :
+            for i in root.children :
+                s_child(i)
+            result.append(root.val)
+        s_child(root)
+        return result
