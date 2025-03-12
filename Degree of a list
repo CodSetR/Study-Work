@@ -1,0 +1,8 @@
+        from collections import Counter
+        elements = dict(Counter(nums))
+        l = [key for key, value in elements.items() if value ==elements.get(max(elements, key=elements.get))]
+        minimum = len(nums)+1
+        for i in l :
+            reverse = nums[::-1]
+            minimum = min(minimum , len(nums)-nums.index(i)-reverse.index(i))
+        return(minimum)
