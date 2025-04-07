@@ -1,0 +1,19 @@
+        def permute(l):
+            res = []
+            track = []
+            used = [0 for _ in range(len(l))]
+            def backtrack(nums, used, track):
+                if len(track) == len(l):
+                    res.append(track[:])
+                    return
+                for i in range(len(l)):
+                    if used[i]:
+                        continue
+                    track.append(nums[i])
+                    used[i] = 1
+                    backtrack(nums, used, track[:])
+                    track.pop()
+                    used[i] = 0
+            backtrack(l, used, track)
+            return res
+        return (permute(nums))
