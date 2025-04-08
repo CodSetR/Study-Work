@@ -1,0 +1,11 @@
+        result = []
+        def generator(openP:int, closeP:int, case:str):
+            if openP == closeP and openP + closeP == n * 2:
+                result.append(case)
+                return
+            if openP < n:
+                generator(openP + 1, closeP, case + "(")
+            if closeP < openP:
+                generator(openP, closeP + 1, case + ")")
+        generator(0, 0, "")
+        return result
