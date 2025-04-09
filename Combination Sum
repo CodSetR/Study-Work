@@ -1,0 +1,28 @@
+        def checker(candidates : list,target: int):
+            if target == 1 : return []
+            result,check,track,check_permutations,c = [],[],[0 for x in candidates],[],0
+            def backtracking():
+                nonlocal c
+                for i in candidates :
+                    check.append(i)
+                    c += i
+                    track[candidates.index(i)] += 1
+                    if c < target :
+                        backtracking()
+                        c -= i
+                        check.pop()
+                        track[candidates.index(i)] -= 1
+                    elif c == target :
+                        if not (track.copy() in check_permutations) :
+                            result.append(check.copy())
+                            check_permutations.append(track.copy())
+                        c -= i
+                        check.pop()
+                        track[candidates.index(i)] -= 1
+                    elif c > target :
+                        c -= i
+                        check.pop()
+                        track[candidates.index(i)] -= 1
+            backtracking()
+            return result
+        return checker(candidates,target)
