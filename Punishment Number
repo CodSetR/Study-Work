@@ -3,7 +3,6 @@
             def party(s:str, P:list, target:int) :
                 nonlocal j
                 if sum(int(x) for x in P+[s]) == target :
-                    print(sum(int(x) for x in P+[s]))
                     j = True
                 else :
                     for i in range(1,len(s)):
