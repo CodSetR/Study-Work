@@ -1,0 +1,20 @@
+def quick_sort(elements, start, end):
+    if start < end:
+        partition_index = partition(elements, start, end)
+        quick_sort(elements, start, partition_index-1)
+        quick_sort(elements, partition_index+1, end)
+def partition(elements, start, end):
+    pivot_index = start
+    pivot = elements[pivot_index]
+    while start < end:
+        while start < len(elements) and elements[start] <= pivot:
+            start+=1
+        while elements[end] > pivot:
+            end-=1
+        if start < end:
+            if start!= end: elements[start],elements[end] = elements[end],elements[start]
+    if pivot_index!= end: elements[pivot_index],elements[end] = elements[end],elements[pivot_index]
+    return end
+numbers = [1,4,2,5,2,56,3,6,3,6,3,56,75,124,5,2,2,3,5,234,54,32,435,34,7,9,86,56,434,54,6]
+quick_sort(numbers,0,len(numbers)-1)
+print(numbers)
